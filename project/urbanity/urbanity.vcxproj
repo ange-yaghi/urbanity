@@ -19,10 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\float_simd.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\math.cpp" />
+    <ClCompile Include="..\..\src\math_single.cpp" />
+    <ClCompile Include="..\..\src\mesh.cpp" />
+    <ClCompile Include="..\..\src\obj_file_loader.cpp" />
+    <ClCompile Include="..\..\src\obj_file_writer.cpp" />
+    <ClCompile Include="..\..\src\standard_allocator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\example_header.h" />
+    <ClInclude Include="..\..\include\float_simd.h" />
+    <ClInclude Include="..\..\include\math.h" />
+    <ClInclude Include="..\..\include\math_conf.h" />
+    <ClInclude Include="..\..\include\math_single.h" />
+    <ClInclude Include="..\..\include\memory_management.h" />
+    <ClInclude Include="..\..\include\mesh.h" />
+    <ClInclude Include="..\..\include\obj_file_writer.h" />
+    <ClInclude Include="..\..\include\obj_file_loader.h" />
+    <ClInclude Include="..\..\include\real.h" />
+    <ClInclude Include="..\..\include\standard_allocator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
