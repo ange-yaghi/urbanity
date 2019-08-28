@@ -116,7 +116,7 @@ if __name__ == "__main__":
     # Rewrite the file
     f = open(mypath + '/workspace/tracking/build_version.txt', 'w')
     
-    f.write('Template 2019 Build Information\n')
+    f.write('Urbanity 2019 Build Information\n')
     f.write('Ange Yaghi | 2019\n')
     
     f.write('BUILD VERSION: %d\n\n' % (build_version))
