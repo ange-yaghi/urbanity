@@ -57,6 +57,12 @@
     <ClCompile Include="..\..\src\obj_file_writer.cpp">
       <Filter>Source Files\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\mesh_instance.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\example_header.h">
@@ -90,6 +96,12 @@
       <Filter>Header Files\geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\mesh.h">
+      <Filter>Header Files\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mesh_instance.h">
+      <Filter>Header Files\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\scene.h">
       <Filter>Header Files\geometry</Filter>
     </ClInclude>
   </ItemGroup>
