@@ -25,6 +25,7 @@ namespace urb {
         void writeNormal(const math::Vector &n);
         void writeTexCoords(const math::Vector &t);
         void writeFace(const Mesh::Face &face);
+        void writeComment(const std::string &comment);
 
     protected:
         std::ofstream m_outputFile;

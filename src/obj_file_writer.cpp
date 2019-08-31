@@ -24,8 +24,8 @@ void urb::ObjFileWriter::writeScene(const std::string &fname, Scene *scene) {
 }
 
 void urb::ObjFileWriter::writeHeader() {
-    m_outputFile << "# Urbanity OBJ file\n";
-    m_outputFile << "# https://github.com/ange-yaghi/urbanity\n";
+    writeComment("Urbanity OBJ file");
+    writeComment("https://github.com/ange-yaghi/urbanity");
 }
 
 void urb::ObjFileWriter::writeMeshInstance(const MeshInstance *mesh) {
@@ -46,4 +46,8 @@ void urb::ObjFileWriter::writeTexCoords(const math::Vector &t) {
 
 void urb::ObjFileWriter::writeFace(const Mesh::Face &face) {
     // TODO
+}
+
+void urb::ObjFileWriter::writeComment(const std::string &comment) {
+    m_outputFile << "# " << comment << "\n";
 }
