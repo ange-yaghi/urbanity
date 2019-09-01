@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\include\simulation_object.cpp" />
     <ClCompile Include="..\..\src\float_simd.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\math.cpp" />
@@ -28,10 +29,10 @@
     <ClCompile Include="..\..\src\obj_file_loader.cpp" />
     <ClCompile Include="..\..\src\obj_file_writer.cpp" />
     <ClCompile Include="..\..\src\scene.cpp" />
+    <ClCompile Include="..\..\src\simulator.cpp" />
     <ClCompile Include="..\..\src\standard_allocator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\example_header.h" />
     <ClInclude Include="..\..\include\float_simd.h" />
     <ClInclude Include="..\..\include\math.h" />
     <ClInclude Include="..\..\include\math_conf.h" />
@@ -43,6 +44,8 @@
     <ClInclude Include="..\..\include\obj_file_loader.h" />
     <ClInclude Include="..\..\include\real.h" />
     <ClInclude Include="..\..\include\scene.h" />
+    <ClInclude Include="..\..\include\simulation_object.h" />
+    <ClInclude Include="..\..\include\simulator.h" />
     <ClInclude Include="..\..\include\standard_allocator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
