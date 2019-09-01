@@ -31,6 +31,12 @@
     <Filter Include="Source Files\memory-management">
       <UniqueIdentifier>{f92ffb69-ec47-4b0f-8290-c9444724b8ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\simulator">
+      <UniqueIdentifier>{4a9087a7-e651-4ac0-8d16-eaa056e9b75c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\simulator">
+      <UniqueIdentifier>{d002ebc7-fb60-4767-ad16-d81ad52c6b8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -63,11 +69,14 @@
     <ClCompile Include="..\..\src\scene.cpp">
       <Filter>Source Files\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\simulator.cpp">
+      <Filter>Source Files\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\simulation_object.cpp">
+      <Filter>Source Files\simulator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\example_header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\math.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
@@ -103,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="..\..\include\scene.h">
       <Filter>Header Files\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\simulator.h">
+      <Filter>Header Files\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\simulation_object.h">
+      <Filter>Header Files\simulator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

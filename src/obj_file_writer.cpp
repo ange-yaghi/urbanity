@@ -14,6 +14,8 @@ void urb::ObjFileWriter::writeScene(const std::string &fname, Scene *scene) {
     m_outputFile.open(fname, std::ios::out);
     if (!m_outputFile.is_open()) return;
 
+    writeHeader();
+
     int nInstances = scene->getMeshInstanceCount();
     for (int i = 0; i < nInstances; i++) {
         const MeshInstance *meshInstance = scene->getMeshInstance(i);
