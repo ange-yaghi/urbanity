@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "urbanity", "urbanity/urbanity.vcxproj", "{6DB2FA44-5C75-431B-85F5-BAA11D6EF583}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "urbanity", "urbanity\urbanity.vcxproj", "{6DB2FA44-5C75-431B-85F5-BAA11D6EF583}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "urbanity_test", "urbanity_test\urbanity_test.vcxproj", "{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "urbanity_cli", "urbanity_cli\urbanity_cli.vcxproj", "{7C43DACE-C627-4432-A68D-4E85FF64DBCA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6DB2FA44-5C75-431B-85F5-BAA11D6EF583} = {6DB2FA44-5C75-431B-85F5-BAA11D6EF583}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +28,22 @@ Global
 		{6DB2FA44-5C75-431B-85F5-BAA11D6EF583}.Release|x64.Build.0 = Release|x64
 		{6DB2FA44-5C75-431B-85F5-BAA11D6EF583}.Release|x86.ActiveCfg = Release|Win32
 		{6DB2FA44-5C75-431B-85F5-BAA11D6EF583}.Release|x86.Build.0 = Release|Win32
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Debug|x64.ActiveCfg = Debug|x64
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Debug|x64.Build.0 = Debug|x64
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Debug|x86.ActiveCfg = Debug|Win32
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Debug|x86.Build.0 = Debug|Win32
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Release|x64.ActiveCfg = Release|x64
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Release|x64.Build.0 = Release|x64
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Release|x86.ActiveCfg = Release|Win32
+		{2BFD1B89-A84B-4B34-B1B7-673AF14BEAED}.Release|x86.Build.0 = Release|Win32
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Debug|x64.ActiveCfg = Debug|x64
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Debug|x64.Build.0 = Debug|x64
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Debug|x86.ActiveCfg = Debug|Win32
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Debug|x86.Build.0 = Debug|Win32
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Release|x64.ActiveCfg = Release|x64
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Release|x64.Build.0 = Release|x64
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Release|x86.ActiveCfg = Release|Win32
+		{7C43DACE-C627-4432-A68D-4E85FF64DBCA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

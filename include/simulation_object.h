@@ -5,6 +5,8 @@
 
 namespace urb {
 
+    class Simulator;
+
     class SimulationObject {
     public:
         SimulationObject();
@@ -18,9 +20,14 @@ namespace urb {
         void setDeleted(bool deleted) { m_deleted = deleted; }
         bool isDeleted() const { return m_deleted; }
 
+        void setSimulator(Simulator *simulator) { m_simulator = simulator; }
+        Simulator *getSimulator() const { return m_simulator; }
+
     private:
         int m_index;
         bool m_deleted;
+
+        Simulator *m_simulator;
     };
 
 } /* namespace urb */
