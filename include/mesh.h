@@ -8,9 +8,19 @@ namespace urb {
     class Mesh {
     public:
         struct Face {
-            int v1, v2, v3;
-            int n1, n2, n3;
-            int t1, t2, t3;
+            struct Vertex {
+                int v, n, t;
+            };
+
+            union {
+                struct {
+                    int v1, n1, t1;
+                    int v2, n2, t2;
+                    int v3, n3, t3;
+                };
+
+                Vertex v[3];
+            };
         };
 
     public:
@@ -32,7 +42,7 @@ namespace urb {
         void setTexCoord(int index, const math::Vector &t) { m_textureCoordinates[index] = t; }
         int getTexCoordCount() const { return m_texCoordCount; }
 
-        Face *getFace(int index) { return &m_faces[index]; }
+        Face *getFace(int index) const { return &m_faces[index]; }
         int getFaceCount() const { return m_faceCount; }
 
     protected:

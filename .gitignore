@@ -66,7 +66,7 @@ StyleCopReport.xml
 *.meta
 *.obj
 !demos/models/*.obj
-!test/geometry/*.obj
+!test/assets/geometry/*.obj
 *.iobj
 *.pch
 *.pdb

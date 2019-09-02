@@ -5,7 +5,7 @@
 #include "scene.h"
 
 #include <string>
-#include <fstream>
+#include <ostream>
 
 namespace urb {
 
@@ -14,6 +14,7 @@ namespace urb {
         ObjFileWriter();
         ~ObjFileWriter();
 
+        void writeScene(std::ostream *stream, Scene *scene);
         void writeScene(const std::string &fname, Scene *scene);
 
     protected:
@@ -27,8 +28,14 @@ namespace urb {
         void writeFace(const Mesh::Face &face);
         void writeComment(const std::string &comment);
 
+        void writeIndex(int index, int offset);
+
     protected:
-        std::ofstream m_outputFile;
+        std::ostream *m_outputStream;
+
+        int m_currentVertex;
+        int m_currentNormal;
+        int m_currentTexCoord;
     };
 
 } /* namespace urb */

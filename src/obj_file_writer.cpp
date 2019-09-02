@@ -2,17 +2,22 @@
 
 #include "../include/mesh.h"
 
+#include <fstream>
+
 urb::ObjFileWriter::ObjFileWriter() {
-    // TODO
+    m_currentVertex = 0;
+    m_currentTexCoord = 0;
+    m_currentNormal = 0;
+
+    m_outputStream = nullptr;
 }
 
 urb::ObjFileWriter::~ObjFileWriter() {
     // TODO
 }
 
-void urb::ObjFileWriter::writeScene(const std::string &fname, Scene *scene) {
-    m_outputFile.open(fname, std::ios::out);
-    if (!m_outputFile.is_open()) return;
+void urb::ObjFileWriter::writeScene(std::ostream *stream, Scene *scene) {
+    m_outputStream = stream;
 
     writeHeader();
 
@@ -22,7 +27,16 @@ void urb::ObjFileWriter::writeScene(const std::string &fname, Scene *scene) {
         writeMeshInstance(meshInstance);
     }
 
-    m_outputFile.close();
+    m_outputStream = nullptr;
+}
+
+void urb::ObjFileWriter::writeScene(const std::string &fname, Scene *scene) {
+    std::fstream outputFile(fname, std::ios::out);
+    if (!outputFile.is_open()) return;
+
+    writeScene(&outputFile, scene);
+
+    outputFile.close();
 }
 
 void urb::ObjFileWriter::writeHeader() {
@@ -31,25 +45,80 @@ void urb::ObjFileWriter::writeHeader() {
 }
 
 void urb::ObjFileWriter::writeMeshInstance(const MeshInstance *mesh) {
-    // TODO
+    int vertexCount = mesh->getVertexCount();
+    for (int i = 0; i < vertexCount; i++) {
+        writeVertex(mesh->getTransformedVertex(i));
+    }
+
+    int normalCount = mesh->getNormalCount();
+    for (int i = 0; i < normalCount; i++) {
+        writeNormal(mesh->getTransformedNormal(i));
+    }
+
+    int texCoordCount = mesh->getMesh()->getTexCoordCount();
+    for (int i = 0; i < texCoordCount; i++) {
+        writeTexCoords(mesh->getMesh()->getTexCoord(i));
+    }
+
+    int faceCount = mesh->getMesh()->getFaceCount();
+    for (int i = 0; i < faceCount; i++) {
+        writeFace(*mesh->getMesh()->getFace(i));
+    }
+
+    m_currentVertex += vertexCount;
+    m_currentNormal += normalCount;
+    m_currentTexCoord += texCoordCount;
 }
 
 void urb::ObjFileWriter::writeVertex(const math::Vector &v) {
-    // TODO
+    *m_outputStream
+        << "v "
+        << math::getX(v) << " "
+        << math::getY(v) << " "
+        << math::getZ(v)
+        << std::endl;
 }
 
 void urb::ObjFileWriter::writeNormal(const math::Vector &n) {
-    // TODO
+    *m_outputStream
+        << "vn "
+        << math::getX(n) << " "
+        << math::getY(n) << " "
+        << math::getZ(n)
+        << std::endl;
 }
 
 void urb::ObjFileWriter::writeTexCoords(const math::Vector &t) {
-    // TODO
+    *m_outputStream
+        << "vt "
+        << math::getX(t) << " "
+        << math::getY(t)
+        << std::endl;
 }
 
 void urb::ObjFileWriter::writeFace(const Mesh::Face &face) {
-    // TODO
+    *m_outputStream << "f ";
+
+    constexpr int VERTEX_COUNT = 3;
+    for (int i = 0; i < VERTEX_COUNT; i++) {
+        writeIndex(face.v[i].v, m_currentVertex); *m_outputStream << "/";
+        writeIndex(face.v[i].n, m_currentNormal); *m_outputStream << "/";
+        writeIndex(face.v[i].t, m_currentTexCoord);
+
+        if (i != VERTEX_COUNT - 1) {
+            *m_outputStream << " ";
+        }
+    }
+
+    *m_outputStream << std::endl;
 }
 
 void urb::ObjFileWriter::writeComment(const std::string &comment) {
-    m_outputFile << "# " << comment << "\n";
+    *m_outputStream << "# " << comment << "\n";
+}
+
+void urb::ObjFileWriter::writeIndex(int index, int offset) {
+    if (index != -1) {
+        *m_outputStream << (index + 1 + offset);
+    }
 }

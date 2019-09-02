@@ -3,6 +3,8 @@
 
 #include "mesh_instance.h"
 
+#include <vector>
+
 namespace urb {
 
     class Scene {
@@ -12,6 +14,10 @@ namespace urb {
 
         int getMeshInstanceCount() const;
         const MeshInstance *getMeshInstance(int index) const;
+        void addMeshInstance(MeshInstance *mesh);
+
+    protected:
+        std::vector<MeshInstance *> m_meshes;
     };
 
 } /* namespace urb */

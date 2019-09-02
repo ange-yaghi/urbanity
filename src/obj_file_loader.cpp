@@ -1,6 +1,7 @@
 #include "../include/obj_file_loader.h"
 
 #include "../include/standard_allocator.h"
+#include "../include/mesh.h"
 
 #include <fstream>
 #include <sstream>
@@ -47,15 +48,63 @@ urb::ObjFileLoader::~ObjFileLoader() {
     // TODO: check that object is actually destroyed
 }
 
-bool urb::ObjFileLoader::loadObjFile(const char *fname) {
+bool urb::ObjFileLoader::loadObjFile(const std::string &fname) {
     std::ifstream inputFile(fname, std::ios::in);
 
-    if (inputFile.is_open()) {
-        return loadObjFile(inputFile);
+    if (!inputFile.is_open()) return false;
+    
+    bool result = loadObjFile(inputFile);
+    inputFile.close();
+
+    return result;
+}
+
+void urb::ObjFileLoader::populateMesh(Mesh *mesh) const {
+    int vertexCount = getVertexCount();
+    int normalCount = getNormalCount();
+    int texCoordCount = getTexCoordCount();
+    int faceCount = getFaceCount();
+
+    mesh->initialize(
+        vertexCount,
+        normalCount,
+        texCoordCount,
+        faceCount
+    );
+
+    for (int i = 0; i < vertexCount; i++) {
+        const math::Vector3 &ref = *m_vertices[i];
+        math::Vector v =
+            math::loadVector(ref.x, ref.y, ref.z);
+
+        mesh->setVertex(i, v);
     }
-    else {
-        // The file could not be loaded
-        return false;
+
+    for (int i = 0; i < normalCount; i++) {
+        const math::Vector3 &ref = *m_normals[i];
+        math::Vector n =
+            math::loadVector(ref.x, ref.y, ref.z);
+
+        mesh->setNormal(i, n);
+    }
+
+    for (int i = 0; i < texCoordCount; i++) {
+        const math::Vector2 &ref = *m_texCoords[i];
+        math::Vector v =
+            math::loadVector(ref.x, ref.y);
+
+        mesh->setTexCoord(i, v);
+    }
+
+    for (int i = 0; i < faceCount; i++) {
+        const ObjFace &ref = *m_faces[i];
+        Mesh::Face *face = mesh->getFace(i);
+
+        for (int vi = 0; vi < 3; vi++) {
+            face->v[vi].v = ref.v[vi] - 1;
+            face->v[vi].n = ref.vn[vi] - 1;
+            face->v[vi].t = ref.vt[vi] - 1;
+        }
     }
 }
 

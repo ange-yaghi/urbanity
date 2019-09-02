@@ -13,6 +13,9 @@
     <ClCompile Include="..\..\test\fsm_test.cpp">
       <Filter>unit\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\test\obj_file_tests.cpp">
+      <Filter>unit</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="unit">
@@ -38,5 +41,8 @@
     <ClInclude Include="..\..\test\fsm_test_state.h">
       <Filter>unit\include</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

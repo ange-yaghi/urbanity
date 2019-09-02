@@ -35,7 +35,10 @@ namespace urb {
         ObjFileLoader();
         ~ObjFileLoader();
 
-        bool loadObjFile(const char *fname);
+        bool loadObjFile(const std::string &fname);
+        bool loadObjFile(std::istream &stream);
+        void populateMesh(class Mesh *mesh) const;
+        void destroy();
 
         unsigned int getVertexCount() const { return (unsigned int)m_vertices.size(); }
         unsigned int getFaceCount() const { return (unsigned int)m_faces.size(); }
@@ -45,12 +48,9 @@ namespace urb {
         ObjFace *getFace(unsigned int i) { return m_faces[i]; }
         math::Vector3 *getVertex(unsigned int i) { return m_vertices[i]; }
         math::Vector3 *getNormal(unsigned int i) { return m_normals[i]; }
-        math::Vector2 *getTexCoords(unsigned int i) { return m_texCoords[i]; }
-
-        void destroy();
+        math::Vector2 *getTexCoords(unsigned int i) { return m_texCoords[i]; }        
 
     protected:
-        bool loadObjFile(std::istream &stream);
         bool readVertexPosition(std::stringstream &s, math::Vector3 *vertex) const;
         bool readVertexNormal(std::stringstream &s, math::Vector3 *normal) const;
         bool readVertexTextureCoords(std::stringstream &s, math::Vector2 *texCoords) const;

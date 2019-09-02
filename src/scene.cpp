@@ -9,11 +9,13 @@ urb::Scene::~Scene() {
 }
 
 int urb::Scene::getMeshInstanceCount() const {
-    // TODO
-    return 0;
+    return (int)m_meshes.size();
 }
 
 const urb::MeshInstance *urb::Scene::getMeshInstance(int index) const {
-    // TODO
-    return nullptr;
+    return m_meshes[index];
+}
+
+void urb::Scene::addMeshInstance(MeshInstance *mesh) {
+    m_meshes.push_back(mesh);
 }
