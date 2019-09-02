@@ -1,5 +1,5 @@
-#ifndef HELLO_WORLD_COMPILER_LANGUAGE_RULES_H
-#define HELLO_WORLD_COMPILER_LANGUAGE_RULES_H
+#ifndef LANGUAGE_RULES_H
+#define LANGUAGE_RULES_H
 
 #include <piranha.h>
 
@@ -11,4 +11,4 @@ public:
 	virtual void registerBuiltinNodeTypes();
 };
 
-#endif /* HELLO_WORLD_COMPILER_LANGUAGE_RULES_H */
+#endif /* LANGUAGE_RULES_H */
