@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\test\test.cpp">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\fsm_tests.cpp">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\fsm_test.cpp">
+      <Filter>unit\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="unit">
+      <UniqueIdentifier>{ec5b044b-2a53-402e-b90e-b29961fe80b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pch">
+      <UniqueIdentifier>{da9503f3-e1c3-4ac1-ad33-aa08813f931c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="unit\include">
+      <UniqueIdentifier>{07e167d3-35f3-48e7-bc3a-67b99be8cbe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="unit\src">
+      <UniqueIdentifier>{02d53f25-8311-495e-bb5a-7fceb309df75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\test\pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\test\fsm_test.h">
+      <Filter>unit\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\test\fsm_test_state.h">
+      <Filter>unit\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

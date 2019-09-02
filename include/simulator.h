@@ -46,6 +46,9 @@ namespace urb {
         SimulationObjectType *createObject() {
             SimulationObjectType *newObject =
                 StandardAllocator::Global()->allocate<SimulationObjectType>(1, 16);
+            newObject->setSimulator(this);
+
+            // Add the object to the object list (or frame buffer)
             if (m_currentFrame == nullptr) {
                 m_objects.push_back(newObject);
                 newObject->setIndex(getObjectCount() - 1);
