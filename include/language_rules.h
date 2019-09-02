@@ -1,5 +1,5 @@
-#ifndef LANGUAGE_RULES_H
-#define LANGUAGE_RULES_H
+#ifndef URBANITY_LANGUAGE_RULES_H
+#define URBANITY_LANGUAGE_RULES_H
 
 #include <piranha.h>
 
@@ -11,4 +11,4 @@ public:
 	virtual void registerBuiltinNodeTypes();
 };
 
-#endif /* LANGUAGE_RULES_H */
+#endif /* URBANITY_LANGUAGE_RULES_H */

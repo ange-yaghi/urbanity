@@ -19,7 +19,6 @@ void LanguageRules::registerBuiltinNodeTypes() {
 	registerBuiltinType<piranha::DefaultLiteralIntNode>("literal_int");
 	registerBuiltinType<piranha::DefaultLiteralStringNode>("literal_string");
 
-
 	// Operator types
 	registerBuiltinType<
 		piranha::OperationNodeSpecialized<piranha::native_int, piranha::AddOperationNodeOutput>>("int_add");
@@ -38,5 +37,7 @@ void LanguageRules::registerBuiltinNodeTypes() {
 	);
 
 	// Conversions ========================================
-	registerConversion({ &piranha::FundamentalType::StringType, &piranha::FundamentalType::IntType }, "string_to_int");
+	registerConversion(
+        { &piranha::FundamentalType::StringType, &piranha::FundamentalType::IntType }, 
+        "string_to_int");
 }

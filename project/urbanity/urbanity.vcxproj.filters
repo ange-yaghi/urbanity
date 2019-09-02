@@ -43,11 +43,20 @@
     <Filter Include="Source Files\piranha">
       <UniqueIdentifier>{700eae08-b99a-48c6-b869-a72ad400fd51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\drone">
+      <UniqueIdentifier>{3af004e1-8a2e-4faf-8cc7-d1c79e1163d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\drone">
+      <UniqueIdentifier>{8df89db8-6a1c-4b1e-be8a-4262017f2c59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ai">
+      <UniqueIdentifier>{0506c9fb-0b6f-4e6e-972d-7b7fdc989e1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ai">
+      <UniqueIdentifier>{49da1735-7603-40d0-ba70-c0409e20310b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\math.cpp">
       <Filter>Source Files\math</Filter>
     </ClCompile>
@@ -85,16 +94,16 @@
       <Filter>Source Files\piranha</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\drone.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\drone</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\drone_fsm.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\drone</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\fsm.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ai</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\fsm_state.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ai</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,17 +152,17 @@
     <ClInclude Include="..\..\include\language_rules.h">
       <Filter>Header Files\piranha</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\drone.h">
+      <Filter>Header Files\drone</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\drone_fsm.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\drone</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\fsm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\drone.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\ai</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\fsm_state.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\ai</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
