@@ -1,7 +1,7 @@
 #include "../include/math.h"
 #include "../include/simulator.h"
 #include "../include/obj_file_writer.h"
-
+#include <piranha.h>
 #include <iostream>
 
 int main() {

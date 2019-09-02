@@ -37,6 +37,12 @@
     <Filter Include="Source Files\simulator">
       <UniqueIdentifier>{d002ebc7-fb60-4767-ad16-d81ad52c6b8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Piranha">
+      <UniqueIdentifier>{a620fd2a-ae1e-48bc-8c8e-d8163ad5c55e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Piranha">
+      <UniqueIdentifier>{700eae08-b99a-48c6-b869-a72ad400fd51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -74,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="..\..\include\simulation_object.cpp">
       <Filter>Source Files\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\language_rules.cpp">
+      <Filter>Source Files\Piranha</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\simulation_object.h">
       <Filter>Header Files\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\language_rules.h">
+      <Filter>Header Files\Piranha</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
