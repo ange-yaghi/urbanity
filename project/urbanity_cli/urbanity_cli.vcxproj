@@ -26,7 +26,7 @@
     <ProjectGuid>{7C43DACE-C627-4432-A68D-4E85FF64DBCA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>urbanitycli</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
