@@ -49,6 +49,12 @@
     <Filter Include="Source Files\ai">
       <UniqueIdentifier>{b73987b8-24a8-48f3-8e05-d54b2a2dabe1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\scripting">
+      <UniqueIdentifier>{95a56b47-279a-4f71-8476-e77d18acbb38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scripting">
+      <UniqueIdentifier>{86acabe5-96e6-4919-8767-067774950d42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\math.cpp">
@@ -95,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\drone_fsm.cpp">
       <Filter>Source Files\drone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\language_rules.cpp">
+      <Filter>Source Files\scripting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\drone_fsm.h">
       <Filter>Header Files\drone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\language_rules.h">
+      <Filter>Header Files\scripting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

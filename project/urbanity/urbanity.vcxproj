@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\src\float_simd.cpp" />
     <ClCompile Include="..\..\src\fsm.cpp" />
     <ClCompile Include="..\..\src\fsm_state.cpp" />
+    <ClCompile Include="..\..\src\language_rules.cpp" />
     <ClCompile Include="..\..\src\math.cpp" />
     <ClCompile Include="..\..\src\math_single.cpp" />
     <ClCompile Include="..\..\src\mesh.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="..\..\include\drone.h" />
     <ClInclude Include="..\..\include\float_simd.h" />
     <ClInclude Include="..\..\include\fsm_state.h" />
+    <ClInclude Include="..\..\include\language_rules.h" />
     <ClInclude Include="..\..\include\math.h" />
     <ClInclude Include="..\..\include\math_conf.h" />
     <ClInclude Include="..\..\include\math_single.h" />
@@ -109,31 +111,35 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)/../../dependencies/libraries/piranha/include/;$(IncludePath)</IncludePath>
     <SourcePath>$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)/../../dependencies/libraries/piranha/include/;$(IncludePath)</IncludePath>
     <SourcePath>$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)/../../dependencies/libraries/piranha/include/;$(IncludePath)</IncludePath>
     <SourcePath>$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)/../../dependencies/libraries/piranha/include/;$(IncludePath)</IncludePath>
     <SourcePath>$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformTarget)\$(Configuration)\</IntDir>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
